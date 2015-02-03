@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'date'
 module Kimlik
 	def Giris(kullanici,parola)
