@@ -6,15 +6,16 @@ class Kisi
 	def initialize veriler
 		@kullanici_adi,@parola,@sure,@kota = *veriler
 	end
-	attr_accessor :@kota	
+	#attr_accessor :@kota	
 
 	def skt_hesapla
+		puts @sure
 		Date.today.next_day(@sure.to_i)
 	end
 	
 end
 
 
-ali = Kisi.new("ali 123 60 100")
-ali.skt_hesapla
-puts ali.kota
+ali = Kisi.new("ali","123","60","100")
+#puts ali.skt_hesapla
+#puts ali.kota
