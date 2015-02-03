@@ -39,4 +39,3 @@ using TurkishSupport
 	end	
 end
 
-Navigasyon.listele                        
