@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 require 'date'
 module Kimlik
-	def Giris(kullanici,parola)
+	def giris(kullanici,parola)
 		dosya=File.open("veritabani.txt","r").readlines().each do |satir|
 			parca=satir.split(",")
 			if (parca[0]==kullanici && parca[1]==parola)
