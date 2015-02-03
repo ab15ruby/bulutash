@@ -4,18 +4,23 @@ require "date"
 class Kisi
 	
 	def initialize veriler
-		@kullanici_adi,@parola,@sure,@kota = *veriler
+		@kullanici_adi, @parola, @sure, @kota = *veriler
 	end
-	#attr_accessor :@kota	
 
 	def skt_hesapla
-		puts @sure
 		Date.today.next_day(@sure.to_i)
+	end
+	def kisi_kaydi
+		bilgiler = "#{@kullanici_adi},#{@parola},#{skt_hesapla},#{@kota}"
+		File.open("veritabani.txt","a") do |dosya|
+		dosya.puts bilgiler
+		end
+		
 	end
 	
 end
 
 
-ali = Kisi.new("ali","123","60","100")
-#puts ali.skt_hesapla
-#puts ali.kota
+ali = Kisi.new(["ali","123","60","100"])
+puts ali.skt_hesapla
+ali.kisi_kaydi
