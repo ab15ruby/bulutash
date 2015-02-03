@@ -7,7 +7,7 @@ class Kisi
 		@kayit_tarihi = Date.today
 	end
 	
-	def sure_hesapla
+	def skt_hesapla
 		puts @kayit_tarihi.next_day(@sure.to_i)
 	end
 	
@@ -15,5 +15,5 @@ end
 
 
 ali = Kisi.new("ali 123 60 100")
-ali.sure_hesapla
+ali.skt_hesapla
 
