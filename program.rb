@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'turkish_support'
 using TurkishSupport
 def giris
@@ -17,9 +18,20 @@ loop do
 	girdi=gets.chomp.to_i
 	
 	if    girdi==1 
-		giris()
+		loop do
+                        puts "Cok Yakinda"
+                        sleep(1.0)
+                        system("clear")
+                        sleep(1.0)
+		end
 	elsif girdi==2
-		yeni_kullanici
+		loop do
+        	puts "Cok Yakinda"
+        	sleep(1.0)
+        	system("clear")
+        	sleep(1.0)
+		end
+	
 	elsif girdi==3 
 		break
 	else
