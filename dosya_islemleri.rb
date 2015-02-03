@@ -3,8 +3,8 @@ require 'date'
 require 'time'
 class Dosya_islemleri  
 	
-	def self.dizin (dizin)
-		dosya = File.new(dizin)
+	def self.dizin
+		dosya = File.new('veritabani.txt')
                 kullanici = dosya.readlines.last
                 dosya.close
 		`mkdir #{kullanici.split(',')[0]}`
