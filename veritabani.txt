@@ -1,3 +1,4 @@
 tekkoloji,tekkoloji,2015-2-28,100
 asd,asd,2013-5-26,200
 eozbey,eozbey,2015-5-16,400
+ali,123,2015-04-04,100
