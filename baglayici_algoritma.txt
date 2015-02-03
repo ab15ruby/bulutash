@@ -1,0 +1,42 @@
+loop a girer
+
+Menü 1
+1.Giriş
+2.Yeni kullanıcı
+3.Çıkış
+
+     1.Giriş
+
+     kullanici_adi ve parola iste
+     nesne = Kimlik.new(kullanici_adi,parola)
+
+         loop a girer      
+         Menü 2 
+         1.dosya yükle
+         2.dosya sil
+         3.dosya istatistik
+         4.dosyalarımı listele
+         5.Menü 1'e gitmek için
+
+                 1. dosya yükle
+                   kullanicidan yüklenmesi gereken dosyanın adresini iste
+                   Navigasyoni.yukle(adres) 
+                  2.dosya sil
+                    kullanicidan silinmesini istediği dosyanin adi iste
+                    Navigasyoni.sil(dosya_adi)
+                  3.dosya istatistik
+                    Navigasyoni.istatistik  #not: istatistiğin aldığı dosya adi yerine verita
+                    banı.txt den çek
+                   4.dosyalarımı listele
+                     Navigasyoni.listele
+                   5. break
+   
+   2.Yeni kullanıcı
+        kullanıcı_adi, parola, süre, kota
+        Kisi.kisi_kaydi "kullanici_adi","parola","sure","kota"
+        Dosya_islemleri.dizin
+        
+    3.break   
+
+
+Not: kisi.rb ye kota eklenecek
