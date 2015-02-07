@@ -42,18 +42,45 @@ loop do
 					puts "Yapmak istediğiniz işlemin numarasını giriniz: "
 					islem = gets.chomp.to_i
 					if islem == 1
-						puts "Yüklemek istediğiniz dosyanın adresini giriniz"
+						puts "Yüklemek istediğiniz dosyanın adresini giriniz: "
 						adres = gets.chomp.to_s
-						
+						Navigasyoni.yukle(adres)
+					elsif islem == 2
+						puts "Silmek istediğiniz dosyanın adını giriniz: "
+						dosya_adi = gets.chomp.to_s
+						Navigasyoni.sil(dosya_adi)
+					elsif islem == 3
+						puts "İstatistiginizi görmek için kullanıcı adınızı giriniz: "
+						kullanici_adi = gets.chomp.to_s
+						Navigasyoni.istatistik(kullanici_adi)
+					elsif islem == 4
+						Navigasyoni.listele
+					elsif islem == 5
+						break
+					else
+						puts "Lütfen doğru bir tuşlama yapınız: "
+					end
+			
 									
 				end
 				break
 			end
 		end
-	elsif girdi==2
+	elsif girdi == 2
 		
-	
-	elsif girdi==3 
+		puts "Kullanıcı adı giriniz: "
+		kullanici = gets.chomp.to_s
+		puts "Parolanızı belirleyin: "
+		parola = gets.chomp.to_s
+		puts "Kullanım sürenizi belirleyiniz: "
+		sure = gets.chomp.to_s
+		puts "Kullanım kotanızı belirleyiniz: "
+		kota = gets.chomp.to_s
+		
+		Kisi.kisi_kaydi kullanici,parola,sure,kota
+		Dosya_islemleri.dizin
+		
+	elsif girdi == 3 
 		break
 	else
 		puts "Yanlış deneme lütfen 1, 2, 3 ten birine basın"
