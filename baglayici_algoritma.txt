@@ -8,7 +8,8 @@ Menü 1
      1.Giriş
 
      kullanici_adi ve parola iste
-     nesne = Kimlik.new(kullanici_adi,parola)
+     nesne = Kimlik.new
+     nesne.giris(kullanici_adi,parola)
 
          loop a girer      
          Menü 2 
@@ -33,7 +34,7 @@ Menü 1
    
    2.Yeni kullanıcı
         kullanıcı_adi, parola, süre, kota
-        Kisi.kisi_kaydi "kullanici_adi","parola","sure","kota"
+        Kisi.kisi_kaydi "kullanici_adi","parola","sure","kota"	  Not: başka kullanıcı var mı diye bir kontrol eksik onu yaz 
         Dosya_islemleri.dizin
         
     3.break   

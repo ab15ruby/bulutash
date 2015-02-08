@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require "turkish_support"
+require_relative 'kisi'
 
 class Navigasyoni < Kisi
 using TurkishSupport
@@ -16,6 +17,12 @@ using TurkishSupport
 	end
 
 	def self.istatistik (istatistik)
+		
+		dosya = File.new('veritabani.txt')
+		satir = dosya.readlines.last
+		dosya.close
+		@kota = satir.split(',')[3]
+		
 		@bilgi 	= `du -s #{istatistik}`
 	 	bilgi 	= @bilgi.chomp.split(/\t/)
 		diyez 	= (bilgi[0].to_f/((@kota.to_i)*1024/20)).to_f
@@ -38,4 +45,3 @@ using TurkishSupport
 		puts `ls -l #{@@dizin}`
 	end	
 end
-
