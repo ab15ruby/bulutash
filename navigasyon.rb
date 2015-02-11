@@ -6,10 +6,10 @@ require_relative 'kisi'
 class Navigasyoni < Kisi
 using TurkishSupport
   
-	@@dizin = `pwd`
 
      	def self.yukle (yukle)
-     		`cp #{yukle} #{@@dizin}`
+     		dizin =  `pwd`
+		`cp #{yukle} #{dizin}`
        	end
 
 	def self.sil (sil)
@@ -21,7 +21,7 @@ using TurkishSupport
 		dosya = File.new('veritabani.txt')
 		satir = dosya.readlines.last
 		dosya.close
-		@kota = satir.split(',')[3]
+		kota = satir.split(',')[3]
 		
 		@bilgi 	= `du -s #{istatistik}`
 	 	bilgi 	= @bilgi.chomp.split(/\t/)
@@ -42,6 +42,7 @@ using TurkishSupport
 	end        
 	
 	def self.listele
-		puts `ls -l #{@@dizin}`
+		dizin = `pwd`
+		puts `ls -l #{dizin}`
 	end	
 end
