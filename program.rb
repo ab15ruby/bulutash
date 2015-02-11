@@ -33,39 +33,45 @@ loop do
 				break
 			else
 				loop do
-					puts "Menü-2"
-					puts "1.Dosya yükle"
-					puts "2.Dosya sil"
-					puts "3.Kullanım istatistiği"
-					puts "4.Dosyalarımı listele"
-					puts "5.Menü-1'e gitmek için"
-					puts "Yapmak istediğiniz işlemin numarasını giriniz: "
-					islem = gets.chomp.to_i
-					puts `clear`
-					if islem == 1
-						puts "Yüklemek istediğiniz dosyanın adresini giriniz: "
-						adres = gets.chomp.to_s
-						Navigasyoni.yukle(adres)
-						puts "Dosyanız yüklendi..."
-					elsif islem == 2
-						puts "Silmek istediğiniz dosyanın adını giriniz: "
-						dosya_adi = gets.chomp.to_s
-						Navigasyoni.sil(dosya_adi)
-						puts "Dosyanız silindi..."
-					elsif islem == 3
-						puts "İstatistiginizi görmek için kullanıcı adınızı giriniz: "
-						kullanici_adi = gets.chomp.to_s
-						Navigasyoni.istatistik(kullanici_adi)
-					elsif islem == 4
-						Navigasyoni.listele
-					elsif islem == 5
-						break
-					else
-						puts "Lütfen doğru bir tuşlama yapınız: "
-					end
-					puts `clear`
-			
-									
+					#Dir.chdir(kullanici_adi) do
+						puts "Menü-2"
+						puts "1.Dosya yükle"
+						puts "2.Dosya sil"
+						puts "3.Kullanım istatistiği"
+						puts "4.Dosyalarımı listele"
+						puts "5.Menü-1'e gitmek için"
+						puts "Yapmak istediğiniz işlemin numarasını giriniz: "
+						islem = gets.chomp.to_i
+						puts `clear`
+						if islem == 1
+							Dir.chdir(kullanici_adi) do
+								puts "Yüklemek istediğiniz dosyanın adresini giriniz: "
+								adres = gets.chomp.to_s
+								Navigasyoni.yukle(adres)
+								puts "Dosyanız yüklendi..."
+							end
+						elsif islem == 2
+							Dir.chdir(kullanici_adi) do
+								puts "Silmek istediğiniz dosyanın adını giriniz: "
+								dosya_adi = gets.chomp.to_s
+								Navigasyoni.sil(dosya_adi)
+								puts "Dosyanız silindi..."
+							end
+						elsif islem == 3
+							Navigasyoni.istatistik(kullanici_adi)
+						elsif islem == 4
+							Dir.chdir(kullanici_adi) do
+							Navigasyoni.listele
+							sleep(5.0)
+							end
+						elsif islem == 5 
+							break
+						else
+							puts "Lütfen doğru bir tuşlama yapınız: "
+						end
+						puts `clear`
+					
+ 														
 				end
 				break
 			end
@@ -82,8 +88,8 @@ loop do
 			kota = gets.chomp.to_s
 			`clear`
 			Kisi.kisi_kaydi([kullanici,parola,sure,kota])
-			#Dosya_islemleri.dizin
-		
+			Dosya_islemleri.dizin
+				
 	elsif girdi == 3 
 		break
 	else
