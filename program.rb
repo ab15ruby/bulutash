@@ -77,16 +77,20 @@ loop do
 			end
 		end
 	elsif girdi == 2
-	
-			puts "Kullanıcı adı giriniz: "
-			kullanici = gets.chomp.to_s
+			loop do
+				puts "Kullanıcı adı giriniz: "
+				kullanici = gets.chomp.to_s
+				if (Kisi.kisi_kontrol kullanici) == 0
+					break
+				end
+			end
 			puts "Parolanızı belirleyin: "
 			parola = gets.chomp.to_s
 			puts "Kullanım sürenizi belirleyiniz: "
 			sure = gets.chomp.to_s
 			puts "Kullanım kotanızı belirleyiniz: "
 			kota = gets.chomp.to_s
-			`clear`
+			puts `clear`
 			Kisi.kisi_kaydi([kullanici,parola,sure,kota])
 			Dosya_islemleri.dizin
 				
