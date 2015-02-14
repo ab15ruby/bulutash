@@ -79,8 +79,8 @@ loop do
 	elsif girdi == 2
 			loop do
 				puts "Kullanıcı adı giriniz: "
-				kullanici = gets.chomp.to_s
-				if (Kisi.kisi_kontrol kullanici) == 0
+				@kullanici = gets.chomp.to_s
+				if (Kisi.kisi_kontrol @kullanici) == 0
 					break
 				end
 			end
@@ -91,7 +91,7 @@ loop do
 			puts "Kullanım kotanızı belirleyiniz: "
 			kota = gets.chomp.to_s
 			puts `clear`
-			Kisi.kisi_kaydi([kullanici,parola,sure,kota])
+			Kisi.kisi_kaydi([@kullanici,parola,sure,kota])
 			Dosya_islemleri.dizin
 				
 	elsif girdi == 3 
