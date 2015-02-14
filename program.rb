@@ -7,6 +7,7 @@ require_relative 'dosya_islemleri'
 
 using TurkishSupport
 
+puts `clear`
 
 loop do
 	puts "Menü-1"
@@ -32,8 +33,7 @@ loop do
 				puts "Kullanim süreniz doldu!!"
 				break
 			else
-				loop do
-					#Dir.chdir(kullanici_adi) do
+				loop do	
 						puts "Menü-2"
 						puts "1.Dosya yükle"
 						puts "2.Dosya sil"
